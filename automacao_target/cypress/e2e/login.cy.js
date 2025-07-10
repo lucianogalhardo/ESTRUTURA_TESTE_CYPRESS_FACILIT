@@ -17,6 +17,7 @@ describe('Login', () => {
         cy.get('.tg-form-login > .buttons > .btn').click()
 
         // Assert
+        cy.url().should('eq', 'https://fapsoftex.plataformatarget.com.br/web/fap/2025/home#/')
 
     })
 })
