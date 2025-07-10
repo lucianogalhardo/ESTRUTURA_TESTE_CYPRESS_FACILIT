@@ -1,6 +1,11 @@
+import Login from '../pages/login/index.login.js';
+import HomePage from '../pages/homePage/index.homepage.js';
+
 describe('Login', () => {
     it('realizar login com sucesso', () => {
+        
         // Arrange
+        
         Cypress.on('uncaught:exception', (err, runnable) => {
           // Verifica se o erro é o que você quer ignorar
             if (err.message.includes("themeDisplay.getUser is not a function")) {
@@ -8,16 +13,38 @@ describe('Login', () => {
                 }
             });
 
-        cy.visit('https://fapsoftex.plataformatarget.com.br/web/fap/login'); 
+        Login.visitarPagina();
+
         // Act
-        cy.get('#_58_login').type('lrgalhardo@hotmail.com')
-
-        cy.get('#_58_password').type('faptarget123')
-
-        cy.get('.tg-form-login > .buttons > .btn').click()
+        
+        Login.preencherCredenciaisValidas();
 
         // Assert
-        cy.url().should('eq', 'https://fapsoftex.plataformatarget.com.br/web/fap/2025/home#/')
+
+        HomePage.validarAcessoHomepage();
+
+    })
+
+    it ('realizar login com credenciais inválidas', () => {
+
+        // Arrange
+        
+        Cypress.on('uncaught:exception', (err, runnable) => {
+          // Verifica se o erro é o que você quer ignorar
+            if (err.message.includes("themeDisplay.getUser is not a function")) {
+                return false; // impede o Cypress de falhar o teste
+                }
+            });
+
+        Login.visitarPagina();
+
+        // Act
+        
+        Login.preencherUsuarioNaoCadastrado();
+
+        // Assert
+
+        Login.validarErroCredenciaisInvalidas();
 
     })
 })
