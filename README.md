@@ -1,2 +1,2 @@
 # ESTRUTURA_TESTE_CYPRESS_FACILIT
-Repositório para armazenar estrutura para automação de testes em CYPRESS - empresa: Facilit
+Repositório para hospedar códigos de automação de testes referentes a plataforma TARGET - FACILIT
