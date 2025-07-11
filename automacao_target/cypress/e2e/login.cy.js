@@ -25,7 +25,7 @@ describe('Login', () => {
 
     })
 
-    it ('realizar login com credenciais inválidas', () => {
+    it ('realizar login com usuário não cadastrado', () => {
 
         // Arrange
         

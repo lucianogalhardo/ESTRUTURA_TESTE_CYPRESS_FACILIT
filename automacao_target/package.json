@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.5.1"
+    "cypress": "^14.5.1",
+    "highcharts": "^12.3.0"
   }
 }
